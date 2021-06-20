@@ -1,0 +1,72 @@
+NetBSD QEMU image generation scripts
+====================================
+
+These scripts allow generating customizable live disk images for
+various NetBSD architectures, bootable in QEMU.  They were originally
+intended to facilitate CI on a certain source code hosting website,
+but the website decided to go in a different direction instead.
+
+A NetBSD host machine must be used, because the scripts depend on various
+NetBSD-specific tools.  You must run the image generation scripts as root
+because they use vnd(4) and partitioning tools.
+
+The scripts are useful for:
+
+* quickly provisioning NetBSD systems
+* testing and development
+
+Modifying the scripts to suit your needs is encouraged.
+
+You can log in as "root" with no password.
+
+Please refer to the comments at the top of each script for further
+information.
+
+amd64/i386
+----------
+
+* Boots from GPT on BIOS.
+* VirtIO works.
+* X11 and headless use work.
+
+aarch64/earmv7hf
+----------------
+
+* Boots from GPT on EFI.
+* VirtIO works.
+* X11 and headless use work.
+
+macppc
+------
+
+* Boots from two images, one FFSv2 (NetBSD system),
+  and one HFS (bootloader).
+* Headless only.
+* Reqires root partition (wd0c) to be manually specified at prompt
+  (or specified in custom kernel config).
+
+Architectures to add later
+--------------------------
+
+* MIPS: Requires NetBSD 9.99.x for MIPSSIM. Problems with interrupts
+  (sleep 1 takes several minutes). MALTA does not finish booting.
+* Alpha: Requires NetBSD 9.99.x.
+* SPARC: Requires a sunlabel to boot.
+  How do you create this on a vnd(4) on a non-SPARC system?
+* HPPA: ???
+* RISC-V: ???
+* M68K: ???
+
+Other useful simulators for running NetBSD
+------------------------------------------
+
+* GXemul: http://gavare.se/gxemul/ (MIPS, SuperH)
+* SimH: http://simh.trailing-edge.com/ (VAX)
+* TME: http://people.csail.mit.edu/fredette/tme/ (sun2, sun3, SPARC)
+* Can one of the many Amiga emulators run NetBSD/amiga?
+* Can NetBSD/sgimips run in MAME?
+
+Anita[1] is an alternative that automates running the installation
+process rather than bypassing it.
+
+[1]: http://www.gson.org/netbsd/anita/
