@@ -40,6 +40,7 @@ mips
 ----
 
 * Boots from FFS image using -kernel passed to QEMU.
+* Headless only.
 * Reqires root partition (ld0c) to be manually specified at prompt
   (or specified in custom kernel config).
 
