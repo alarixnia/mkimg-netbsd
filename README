@@ -68,7 +68,7 @@ Architectures to add later
   How do you create this on a vnd(4) on a non-SPARC system?
 * HPPA: ???
 * RISC-V: should be easy, base on mips, needs netbsd 11.x
-* M68K: ???
+* M68K: should be easy, base on mips, needs netbsd 11.x (virt68k)
 
 Other useful simulators for running NetBSD
 ------------------------------------------
