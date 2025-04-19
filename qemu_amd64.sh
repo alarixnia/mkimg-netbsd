@@ -13,5 +13,5 @@ qemu-system-x86_64 \
 	-device ac97,audiodev=oss \
 	-object rng-random,filename=/dev/urandom,id=rng0 \
 	-device virtio-rng-pci,rng=rng0 \
-	-drive file=./workdir/NetBSD-9.2-amd64.qcow2,if=none,id=hd0 \
+	-drive file=./workdir/NetBSD-10.1-amd64.qcow2,if=none,id=hd0 \
 	-device virtio-blk-pci,drive=hd0 $*

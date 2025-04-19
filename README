@@ -39,19 +39,20 @@ aarch64/earmv7hf
 mips
 ----
 
-* Boots from FFS image using -kernel passed to QEMU.
-* Headless only.
 * Reqires root partition (ld0c) to be manually specified at prompt
   (or specified in custom kernel config).
+* Boots from FFS image using -kernel passed to QEMU.
+* Headless only.
 
 macppc
 ------
 
+* Reqires root partition (wd0c) to be manually specified at prompt
+  (or specified in custom kernel config).
+* Requires hfsutils to be installed.
 * Boots from two images, one FFSv2 (NetBSD system),
   and one HFS (bootloader).
 * Headless only.
-* Reqires root partition (wd0c) to be manually specified at prompt
-  (or specified in custom kernel config).
 
 Architectures to add later
 --------------------------
