@@ -75,6 +75,7 @@ printf 'sshd=NO\n' >> /mnt/etc/rc.conf
 printf 'postfix=NO\n' >> /mnt/etc/rc.conf
 printf 'powerd=NO\n' >> /mnt/etc/rc.conf
 printf 'fccache=NO\n' >> /mnt/etc/rc.conf
+printf 'makemandb=NO\n' >> /mnt/etc/rc.conf
 
 echo Unmounting root partition...
 
