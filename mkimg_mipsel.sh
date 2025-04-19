@@ -73,6 +73,7 @@ echo Configuring system...
 
 printf 'rc_configured=YES\n' >> /mnt/etc/rc.conf
 printf 'no_swap=YES\n' >> /mnt/etc/rc.conf
+printf 'hostname=vm\n' >> /mnt/etc/rc.conf
 printf 'dhcpcd=YES\n' >> /mnt/etc/rc.conf
 printf 'sshd=YES\n' >> /mnt/etc/rc.conf
 printf 'powerd=NO\n' >> /mnt/etc/rc.conf
