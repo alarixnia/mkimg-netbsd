@@ -36,6 +36,13 @@ aarch64/earmv7hf
 * VirtIO works.
 * X11 and headless use work.
 
+mips
+----
+
+* Boots from FFS image using -kernel passed to QEMU.
+* Reqires root partition (ld0c) to be manually specified at prompt
+  (or specified in custom kernel config).
+
 macppc
 ------
 
@@ -48,8 +55,6 @@ macppc
 Architectures to add later
 --------------------------
 
-* MIPS: Requires NetBSD 9.99.x for MIPSSIM. Problems with interrupts
-  (sleep 1 takes several minutes). MALTA does not finish booting.
 * Alpha: Requires NetBSD 9.99.x.
 * SPARC: Requires a sunlabel to boot.
   How do you create this on a vnd(4) on a non-SPARC system?
