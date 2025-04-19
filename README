@@ -36,6 +36,14 @@ aarch64/earmv7hf
 * VirtIO works.
 * X11 and headless use work.
 
+hppa
+----
+
+* Reqires root partition (sd0c) to be manually specified at prompt
+  (or specified in custom kernel config).
+* Boots from FFS image using -kernel passed to QEMU.
+* X11 and headless use work.
+
 alpha
 -----
 
@@ -66,7 +74,6 @@ Architectures to add later
 
 * SPARC: Requires a sunlabel to boot.
   How do you create this on a vnd(4) on a non-SPARC system?
-* HPPA: ???
 * RISC-V: should be easy, base on mips, needs netbsd 11.x
 * M68K: should be easy, base on mips, needs netbsd 11.x (virt68k)
 
