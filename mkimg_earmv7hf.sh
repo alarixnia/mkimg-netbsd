@@ -4,7 +4,7 @@
 #
 # This generates a GPT-on-EFI system.
 #
-RELEASE="9.2"
+RELEASE="10.1"
 ARCH="evbarm-earmv7hf"
 PKG_ARCH="earmv7hf"
 SET_SUFFIX=".tgz"
@@ -106,7 +106,7 @@ if [ ! -f ./workdir/misc/${RELEASE}/${ARCH}/QEMU_EFI.fd ];
 then
 	echo Downloading EFI bootloader...
 	ftp -o ./workdir/misc/${RELEASE}/${ARCH}/QEMU_EFI.fd \
-		https://snapshots.linaro.org/components/kernel/leg-virt-tianocore-edk2-upstream/4276/QEMU-ARM/RELEASE_GCC5/QEMU_EFI.fd
+		https://snapshots.linaro.org/components/kernel/leg-virt-tianocore-edk2-upstream/5489/QEMU-ARM/RELEASE_GCC/QEMU_EFI.fd
 fi
 
 echo Unmounting root partition...
