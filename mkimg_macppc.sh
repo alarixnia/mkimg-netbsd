@@ -67,7 +67,7 @@ then
 		"${MIRROR}/NetBSD-${RELEASE}/macppc/binary/kernel/netbsd-GENERIC.gz"
 fi
 
-echo Instaling kernel...
+echo Installing kernel...
 
 zcat workdir/sets/${RELEASE}/${ARCH}/netbsd-GENERIC.gz > /mnt/netbsd
 
