@@ -71,11 +71,20 @@ EOF
 
 echo Configuring system...
 
+printf 'hostname=vm\n' >> /mnt/etc/rc.conf
 printf 'rc_configured=YES\n' >> /mnt/etc/rc.conf
 printf 'no_swap=YES\n' >> /mnt/etc/rc.conf
 printf 'dhcpcd=YES\n' >> /mnt/etc/rc.conf
 printf 'sshd=YES\n' >> /mnt/etc/rc.conf
 printf 'powerd=NO\n' >> /mnt/etc/rc.conf
+
+echo Installing packages...
+
+for pkg in $PACKAGES;
+do
+	pkg_add -fI -P /mnt -K /usr/pkg/pkgdb \
+		"${PKG_MIRROR}/packages/NetBSD/${ARCH}/${RELEASE}/All/${pkg}"
+done
 
 echo Unmounting root partition...
 
