@@ -79,6 +79,7 @@ printf 'dhcpcd=YES\n' >> /mnt/etc/rc.conf
 printf 'sshd=YES\n' >> /mnt/etc/rc.conf
 printf 'powerd=NO\n' >> /mnt/etc/rc.conf
 printf 'makemandb=NO\n' >> /mnt/etc/rc.conf
+printf 'fccache=NO\n' >> /mnt/etc/rc.conf
 
 echo Installing packages...
 
