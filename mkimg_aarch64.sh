@@ -107,7 +107,7 @@ if [ ! -f ./workdir/misc/${RELEASE}/${ARCH}/QEMU_EFI.fd ];
 then
 	echo Downloading EFI bootloader...
 	ftp -o ./workdir/misc/${RELEASE}/${ARCH}/QEMU_EFI.fd \
-		https://snapshots.linaro.org/components/kernel/leg-virt-tianocore-edk2-upstream/4276/QEMU-AARCH64/RELEASE_GCC5/QEMU_EFI.fd
+		https://retrage.github.io/edk2-nightly/bin/RELEASEAARCH64_QEMU_EFI.fd
 fi
 
 echo Unmounting root partition...
