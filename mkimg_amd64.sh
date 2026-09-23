@@ -4,7 +4,7 @@
 #
 # This generates a GPT-on-BIOS system.
 #
-RELEASE="10.1"
+RELEASE="11.0"
 ARCH="amd64"
 SET_SUFFIX=".tar.xz"
 SETS="kern-GENERIC base comp etc games man misc modules text"

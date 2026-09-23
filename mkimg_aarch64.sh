@@ -4,7 +4,7 @@
 #
 # This generates a GPT-on-EFI system.
 #
-RELEASE="10.1"
+RELEASE="11.0"
 ARCH="evbarm-aarch64"
 PKG_ARCH="aarch64"
 SET_SUFFIX=".tgz"

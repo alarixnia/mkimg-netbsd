@@ -2,7 +2,7 @@
 #
 # Requirements: qemu
 #
-RELEASE="10.1"
+RELEASE="11.0"
 ARCH="evbmips-mipsel"
 PKG_ARCH="mipsel"
 SET_SUFFIX=".tgz"

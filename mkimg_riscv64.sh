@@ -3,17 +3,17 @@
 # Requirements: qemu
 #
 RELEASE="11.0"
-ARCH="alpha"
-PKG_ARCH="alpha"
+ARCH="riscv-riscv64"
+PKG_ARCH="riscv-riscv64"
 SET_SUFFIX=".tgz"
 SETS="base comp etc games man misc modules text"
 SETS="${SETS} rescue tests"
 # X is often needed for binary packages...
-SETS="${SETS} xbase xcomp xetc xfont xserver"
-KERNEL="GENERIC"
+#SETS="${SETS} xbase xcomp xetc xfont xserver"
+KERNEL="GENERIC64"
 MIRROR="https://cdn.NetBSD.org/pub/NetBSD"
-PKG_MIRROR="https://cdn.NetBSD.org/pub/pkgsrc"
-PACKAGES="pkg_alternatives pkgin" 
+#PKG_MIRROR="https://cdn.NetBSD.org/pub/pkgsrc"
+#PACKAGES="pkg_alternatives pkgin" 
 
 mkdir -p "workdir/sets/${RELEASE}/${ARCH}"
 mkdir -p "workdir/kernel/${RELEASE}/${ARCH}"
@@ -62,7 +62,7 @@ rndctl -S /mnt/var/db/entropy-file
 echo Creating fstab...
 
 cat << EOF > /mnt/etc/fstab
-/dev/wd0c	/		ffs	rw,log,noatime,nodevmtime	1 1
+/dev/ld4a	/		ffs	rw,log,noatime,nodevmtime	1 1
 kernfs		/kern		kernfs	rw
 ptyfs		/dev/pts	ptyfs	rw
 procfs		/proc		procfs	rw
@@ -71,7 +71,6 @@ EOF
 
 echo Configuring system...
 
-printf 'hostname=vm\n' >> /mnt/etc/rc.conf
 printf 'rc_configured=YES\n' >> /mnt/etc/rc.conf
 printf 'no_swap=YES\n' >> /mnt/etc/rc.conf
 printf 'hostname=vm\n' >> /mnt/etc/rc.conf
@@ -79,15 +78,6 @@ printf 'dhcpcd=YES\n' >> /mnt/etc/rc.conf
 printf 'sshd=YES\n' >> /mnt/etc/rc.conf
 printf 'powerd=NO\n' >> /mnt/etc/rc.conf
 printf 'makemandb=NO\n' >> /mnt/etc/rc.conf
-printf 'fccache=NO\n' >> /mnt/etc/rc.conf
-
-echo Installing packages...
-
-for pkg in $PACKAGES;
-do
-	pkg_add -fI -P /mnt -K /usr/pkg/pkgdb \
-		"${PKG_MIRROR}/packages/NetBSD/${ARCH}/${RELEASE}/All/${pkg}"
-done
 
 echo Unmounting root partition...
 

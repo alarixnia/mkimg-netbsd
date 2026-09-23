@@ -2,7 +2,7 @@
 #
 # Requirements: qemu
 #
-RELEASE="10.1"
+RELEASE="11.0"
 ARCH="evbmips-mipsn64el"
 PKG_ARCH="mipsn64el"
 SET_SUFFIX=".tgz"

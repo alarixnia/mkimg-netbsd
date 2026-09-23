@@ -11,7 +11,7 @@
 # With the GENERIC kernel, the root device (wd0c) needs to be specified
 # by hand at the root device prompt once it's booted.
 #
-RELEASE="10.1"
+RELEASE="11.0"
 ARCH="macppc"
 SET_SUFFIX=".tgz"
 SETS="base comp etc games man misc modules text"

@@ -2,7 +2,7 @@
 #
 # Requirements: qemu
 #
-RELEASE="10.1"
+RELEASE="11.0"
 ARCH="hppa"
 PKG_ARCH="hppa"
 SET_SUFFIX=".tgz"
